@@ -1,0 +1,12 @@
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/CMakeFiles/FlexPlot.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/imgui_bindings/CMakeFiles/imgui_bindings.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/imgui_bindings/CMakeFiles/edit_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/imgui_bindings/CMakeFiles/rebuild_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImGuiHandle/CMakeFiles/ToroImGuiHandle.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImGuiHandle/CMakeFiles/edit_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImGuiHandle/CMakeFiles/rebuild_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImNodeFlow/CMakeFiles/ToroImNodeFlow.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImNodeFlow/CMakeFiles/edit_cache.dir
+C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImNodeFlow/CMakeFiles/rebuild_cache.dir

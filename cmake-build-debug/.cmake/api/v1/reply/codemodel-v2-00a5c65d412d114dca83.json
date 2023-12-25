@@ -1,0 +1,174 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "includes/imgui_bindings",
+					"jsonFile" : "directory-includes.imgui_bindings-Debug-053ab80e79e0b41fd8bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "includes/imgui_bindings",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "includes/ToroImGuiHandle",
+					"jsonFile" : "directory-includes.ToroImGuiHandle-Debug-d8e401e01526430bc645.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "includes/ToroImGuiHandle",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "includes/ToroImNodeFlow",
+					"jsonFile" : "directory-includes.ToroImNodeFlow-Debug-3eec0154e03aaeb55847.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "includes/ToroImNodeFlow",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FlexPlot",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "imgui_bindings",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "ToroImGuiHandle",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "ToroImNodeFlow",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FlexPlot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FlexPlot-Debug-5c85c69a4af4f1c3fb29.json",
+					"name" : "FlexPlot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ToroImGuiHandle::@d82048a15e7da1393064",
+					"jsonFile" : "target-ToroImGuiHandle-Debug-a981a908df1e303fb3fe.json",
+					"name" : "ToroImGuiHandle",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ToroImNodeFlow::@3951fbe55528012e131b",
+					"jsonFile" : "target-ToroImNodeFlow-Debug-b4db6b571f2e20c81423.json",
+					"name" : "ToroImNodeFlow",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "imgui_bindings::@98b3313984ca992b64b3",
+					"jsonFile" : "target-imgui_bindings-Debug-97ff47b3ac2a7eaaf1d8.json",
+					"name" : "imgui_bindings",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug",
+		"source" : "C:/AA-FILE/PROGRAMS/CPP/FlexPlot"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

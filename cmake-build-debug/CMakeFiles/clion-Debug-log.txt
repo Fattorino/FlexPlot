@@ -1,0 +1,405 @@
+"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe" -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=conan_provider.cmake -G Ninja -S C:\AA-FILE\PROGRAMS\CPP\FlexPlot -B C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug
+-- CMake-Conan: first find_package() found. Installing dependencies with Conan
+-- CMake-Conan: Checking if a default profile exists
+C:\Users\admin\.conan2\profiles\default
+-- CMake-Conan: cmake_system_name=Windows
+-- CMake-Conan: cmake_system_processor=x86_64
+-- CMake-Conan: CMake compiler=GNU
+-- CMake-Conan: CMake compiler version=13.1.0
+-- CMake-Conan: [settings] compiler=gcc
+-- CMake-Conan: [settings] compiler.version=13
+-- CMake-Conan: Creating profile C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan_host_profile
+-- CMake-Conan: Profile: 
+[settings]
+arch=x86_64
+os=Windows
+compiler=gcc
+compiler.version=13
+compiler.cppstd=17
+compiler.libcxx=libstdc++11
+build_type=Debug
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c":"C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc.exe","cpp":"C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe"}
+
+-- CMake-Conan: Installing single configuration Debug
+-- CMake-Conan: conan install C:/AA-FILE/PROGRAMS/CPP/FlexPlot -of=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan --profile:host=default;--profile:host=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan_host_profile;--profile:build=default;--build=missing;-g;CMakeDeps
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Debug
+compiler=gcc
+compiler.cppstd=17
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Windows
+[conf]
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={'c': 'C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc.exe', 'cpp': 'C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe'}
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=13
+os=Windows
+
+
+======== Computing dependency graph ========
+imgui/1.90: Not found in local cache, looking in remotes...
+imgui/1.90: Checking remote: conancenter
+imgui/1.90: Downloaded recipe revision f848b6ce0252ed4ee9a01c460a7e936f
+glfw/3.3.8: Not found in local cache, looking in remotes...
+glfw/3.3.8: Checking remote: conancenter
+glfw/3.3.8: Downloaded recipe revision fa80260213e8f8da1315ba152e023e3e
+opengl/system: Not found in local cache, looking in remotes...
+opengl/system: Checking remote: conancenter
+opengl/system: Downloaded recipe revision b29589c04d6df84c110d6acb066ab653
+Graph root
+    conanfile.py: C:/AA-FILE/PROGRAMS/CPP/FlexPlot\conanfile.py
+Requirements
+    glfw/3.3.8#fa80260213e8f8da1315ba152e023e3e - Downloaded (conancenter)
+    imgui/1.90#f848b6ce0252ed4ee9a01c460a7e936f - Downloaded (conancenter)
+    implot/0.16#ee69cfb6ac7025f523840642ddf32ae3 - Cache
+    opengl/system#b29589c04d6df84c110d6acb066ab653 - Downloaded (conancenter)
+
+======== Computing necessary packages ========
+imgui/1.90: Checking 11 compatible configurations
+imgui/1.90: Compatible configurations not found in cache, checking servers
+imgui/1.90: '023da0a48976f3e1d576a5df62c202bb7336b224': compiler.cppstd=98
+imgui/1.90: '67022586e20a39dc5e67269a2897e4b6455d70cb': compiler.cppstd=gnu98
+imgui/1.90: '5913d148a1602bac10819bad763c09ce146c6546': compiler.cppstd=11
+imgui/1.90: 'f36bbbe281775d331e2ad3140f18fd767fb089ab': compiler.cppstd=gnu11
+imgui/1.90: 'cf835fca21ff10f5e0c76fee8966a2593644c2e2': compiler.cppstd=14
+imgui/1.90: 'a9de39be0740bbca0005f4002f10288ca38db436': compiler.cppstd=gnu14
+imgui/1.90: '676851fcada385d04bc5dbb7e15088343e29f5ee': compiler.cppstd=gnu17
+imgui/1.90: 'd238a9ba87303a7e5b7a6f56481b37b8c6f62843': compiler.cppstd=20
+imgui/1.90: '808e87ef63cea7c27c9189723e8b93a8a6077a60': compiler.cppstd=gnu20
+imgui/1.90: '705882447c24cea1f49d616de015c6dd7a4d3fd8': compiler.cppstd=23
+imgui/1.90: '54fe98bd1f8c65637705cb10cd348d56810085ab': compiler.cppstd=gnu23
+implot/0.16: Checking 11 compatible configurations
+implot/0.16: Compatible configurations not found in cache, checking servers
+implot/0.16: 'd391b0c016e50371ae851e9246e6a994286d0c42': compiler.cppstd=98
+implot/0.16: 'd76b99f3c3f8edf3418a3183d2d96eec5f97458a': compiler.cppstd=gnu98
+implot/0.16: '099696213d297003bccd86de66f3857a7ead86f5': compiler.cppstd=11
+implot/0.16: 'e7c067f63f7c13306264d8c00dc3f44d9ffc43ea': compiler.cppstd=gnu11
+implot/0.16: 'd2b8581af49758fb90147e1a55665f95b52121c1': compiler.cppstd=14
+implot/0.16: '07a26bd91762629ab004c591e4591c130702a8d6': compiler.cppstd=gnu14
+implot/0.16: '9f6def6ba64685130a71292b5990b54425fa44f6': compiler.cppstd=gnu17
+implot/0.16: '1013a8c105efedb8a4072aeddd7137d5c7e51e54': compiler.cppstd=20
+implot/0.16: 'bf4465021ea1c788db3e84ea8b5475d7e15219c6': compiler.cppstd=gnu20
+implot/0.16: 'd74a8a04d7f2ff9ca43cd63d41cb265cddeec7b0': compiler.cppstd=23
+implot/0.16: '8299d8ee4e545d441cb22a33ef382e9244cc7c27': compiler.cppstd=gnu23
+Requirements
+    glfw/3.3.8#fa80260213e8f8da1315ba152e023e3e:8017d78d70cd810fbc93ef6c919368c5a0f66568 - Build
+    imgui/1.90#f848b6ce0252ed4ee9a01c460a7e936f:26c25a003bb3b7e4442c6036ea3f34cf49de4264 - Build
+    implot/0.16#ee69cfb6ac7025f523840642ddf32ae3:84e8697575b591eb7b9eb19bb4aac7396d7347d4 - Build
+    opengl/system#b29589c04d6df84c110d6acb066ab653:da39a3ee5e6b4b0d3255bfef95601890afd80709#0ba8627bd47edc3a501e8f0eb9a79e5e - Download (conancenter)
+
+======== Installing packages ========
+
+-------- Downloading 1 package --------
+opengl/system: Retrieving package da39a3ee5e6b4b0d3255bfef95601890afd80709 from remote 'conancenter' 
+opengl/system: Package installed da39a3ee5e6b4b0d3255bfef95601890afd80709
+opengl/system: Downloaded package revision 0ba8627bd47edc3a501e8f0eb9a79e5e
+imgui/1.90: Sources downloaded from 'conancenter'
+imgui/1.90: Calling source() in C:\Users\admin\.conan2\p\imgui304a75a5e71d9\s\src
+
+-------- Installing package imgui/1.90 (1 of 4) --------
+imgui/1.90: Building from source
+imgui/1.90: Package imgui/1.90:26c25a003bb3b7e4442c6036ea3f34cf49de4264
+imgui/1.90: Copying sources to build folder
+imgui/1.90: Building your package in C:\Users\admin\.conan2\p\b\imguic170492e74256\b
+imgui/1.90: Calling generate()
+imgui/1.90: Generators folder: C:\Users\admin\.conan2\p\b\imguic170492e74256\b\build\Debug\generators
+imgui/1.90: CMakeToolchain generated: conan_toolchain.cmake
+imgui/1.90: CMakeToolchain generated: CMakePresets.json
+imgui/1.90: Generating aggregated env files
+imgui/1.90: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
+imgui/1.90: Calling build()
+imgui/1.90: Running CMake.configure()
+imgui/1.90: RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="C:/Users/admin/.conan2/p/b/imguic170492e74256/b/build/Debug/generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="C:/Users/admin/.conan2/p/b/imguic170492e74256/p" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Debug" "C:\Users\admin\.conan2\p\b\imguic170492e74256\b\src\.."
+-- Using Conan toolchain: C:/Users/admin/.conan2/p/b/imguic170492e74256/b/build/Debug/generators/conan_toolchain.cmake
+-- Conan toolchain: C++ Standard 17 with extensions OFF
+-- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- Configuring done (2.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/admin/.conan2/p/b/imguic170492e74256/b/build/Debug
+
+imgui/1.90: Running CMake.build()
+imgui/1.90: RUN: cmake --build "C:\Users\admin\.conan2\p\b\imguic170492e74256\b\build\Debug" -- -j8
+[1/8] Building CXX object CMakeFiles/binary_to_compressed_c.dir/src/misc/fonts/binary_to_compressed_c.cpp.obj
+[2/8] Linking CXX executable binary_to_compressed_c.exe
+[3/8] Building CXX object CMakeFiles/imgui.dir/src/imgui_demo.cpp.obj
+[4/8] Building CXX object CMakeFiles/imgui.dir/src/imgui_tables.cpp.obj
+[5/8] Building CXX object CMakeFiles/imgui.dir/src/imgui_draw.cpp.obj
+[6/8] Building CXX object CMakeFiles/imgui.dir/src/imgui_widgets.cpp.obj
+[7/8] Building CXX object CMakeFiles/imgui.dir/src/imgui.cpp.obj
+[8/8] Linking CXX static library libimgui.a
+
+imgui/1.90: Package '26c25a003bb3b7e4442c6036ea3f34cf49de4264' built
+imgui/1.90: Build folder C:\Users\admin\.conan2\p\b\imguic170492e74256\b\build\Debug
+imgui/1.90: Generating the package
+imgui/1.90: Packaging in folder C:\Users\admin\.conan2\p\b\imguic170492e74256\p
+imgui/1.90: Calling package()
+imgui/1.90: Running CMake.install()
+imgui/1.90: RUN: cmake --install "C:\Users\admin\.conan2\p\b\imguic170492e74256\b\build\Debug" --prefix "C:/Users/admin/.conan2/p/b/imguic170492e74256/p"
+-- Install configuration: "Debug"
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/bin/binary_to_compressed_c.exe
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imconfig.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imgui.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imgui_internal.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imstb_rectpack.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imstb_textedit.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imstb_truetype.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include/imgui_export_headers.h
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/Cousine-Regular.ttf
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/DroidSans.ttf
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/Karla-Regular.ttf
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/ProggyClean.ttf
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/ProggyTiny.ttf
+-- Installing: C:/Users/admin/.conan2/p/b/imguic170492e74256/p/res/fonts/Roboto-Medium.ttf
+
+imgui/1.90: package(): Packaged 1 '.exe' file: binary_to_compressed_c.exe
+imgui/1.90: package(): Packaged 29 '.h' files
+imgui/1.90: package(): Packaged 1 '.a' file: libimgui.a
+imgui/1.90: package(): Packaged 2 '.txt' files: LICENSE.txt, README.txt
+imgui/1.90: package(): Packaged 24 '.cpp' files
+imgui/1.90: package(): Packaged 2 '.mm' files: imgui_impl_metal.mm, imgui_impl_osx.mm
+imgui/1.90: package(): Packaged 6 '.ttf' files
+imgui/1.90: package(): Packaged 1 '.md' file: README.md
+imgui/1.90: Created package revision 902502e53a6afc9d63095d8360efe0c2
+imgui/1.90: Package '26c25a003bb3b7e4442c6036ea3f34cf49de4264' created
+imgui/1.90: Full package reference: imgui/1.90#f848b6ce0252ed4ee9a01c460a7e936f:26c25a003bb3b7e4442c6036ea3f34cf49de4264#902502e53a6afc9d63095d8360efe0c2
+imgui/1.90: Package folder C:\Users\admin\.conan2\p\b\imguic170492e74256\p
+imgui/1.90: Appending PATH env var with : C:\Users\admin\.conan2\p\b\imguic170492e74256\p\bin
+glfw/3.3.8: Sources downloaded from 'conancenter'
+glfw/3.3.8: Calling source() in C:\Users\admin\.conan2\p\glfwb4c8434d0e550\s\src
+glfw/3.3.8: Unzipping 7.1MB, this can take a while
+
+
+-------- Installing package glfw/3.3.8 (3 of 4) --------
+glfw/3.3.8: Building from source
+glfw/3.3.8: Package glfw/3.3.8:8017d78d70cd810fbc93ef6c919368c5a0f66568
+glfw/3.3.8: Copying sources to build folder
+glfw/3.3.8: Building your package in C:\Users\admin\.conan2\p\b\glfwda36766526193\b
+glfw/3.3.8: Calling generate()
+glfw/3.3.8: Generators folder: C:\Users\admin\.conan2\p\b\glfwda36766526193\b\build\Debug\generators
+glfw/3.3.8: CMakeToolchain generated: conan_toolchain.cmake
+glfw/3.3.8: CMakeToolchain generated: CMakePresets.json
+glfw/3.3.8: CMakeToolchain generated: ..\..\..\src\CMakeUserPresets.json
+glfw/3.3.8: Generating aggregated env files
+glfw/3.3.8: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
+glfw/3.3.8: Calling build()
+glfw/3.3.8: Apply patch (official): Remove dependency on extra-cmake-modules to fix generation of Wayland Protocols
+glfw/3.3.8: Running CMake.configure()
+glfw/3.3.8: RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="C:/Users/admin/.conan2/p/b/glfwda36766526193/b/build/Debug/generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="C:/Users/admin/.conan2/p/b/glfwda36766526193/p" -DGLFW_BUILD_DOCS="OFF" -DGLFW_BUILD_EXAMPLES="OFF" -DGLFW_BUILD_TESTS="OFF" -DGLFW_INSTALL="ON" -DGLFW_USE_WAYLAND="OFF" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Debug" "C:\Users\admin\.conan2\p\b\glfwda36766526193\b\src"
+-- Using Conan toolchain: C:/Users/admin/.conan2/p/b/glfwda36766526193/b/build/Debug/generators/conan_toolchain.cmake
+-- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+-- The C compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Looking for dinput.h
+-- Looking for dinput.h - found
+-- Looking for xinput.h
+-- Looking for xinput.h - found
+-- Performing Test _GLFW_HAS_DEP
+-- Performing Test _GLFW_HAS_DEP - Success
+-- Performing Test _GLFW_HAS_ASLR
+-- Performing Test _GLFW_HAS_ASLR - Success
+-- Performing Test _GLFW_HAS_64ASLR
+-- Performing Test _GLFW_HAS_64ASLR - Success
+-- Using Win32 for window creation
+-- Configuring done (5.8s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_POLICY_DEFAULT_CMP0091
+
+
+-- Build files have been written to: C:/Users/admin/.conan2/p/b/glfwda36766526193/b/build/Debug
+
+glfw/3.3.8: Running CMake.build()
+glfw/3.3.8: RUN: cmake --build "C:\Users\admin\.conan2\p\b\glfwda36766526193\b\build\Debug" -- -j8
+[1/16] Building C object src/CMakeFiles/glfw.dir/monitor.c.obj
+[2/16] Building C object src/CMakeFiles/glfw.dir/win32_joystick.c.obj
+[3/16] Building C object src/CMakeFiles/glfw.dir/init.c.obj
+[4/16] Building C object src/CMakeFiles/glfw.dir/win32_init.c.obj
+[5/16] Building C object src/CMakeFiles/glfw.dir/vulkan.c.obj
+[6/16] Building C object src/CMakeFiles/glfw.dir/context.c.obj
+[7/16] Building C object src/CMakeFiles/glfw.dir/input.c.obj
+[8/16] Building C object src/CMakeFiles/glfw.dir/window.c.obj
+[9/16] Building C object src/CMakeFiles/glfw.dir/win32_time.c.obj
+[10/16] Building C object src/CMakeFiles/glfw.dir/win32_monitor.c.obj
+[11/16] Building C object src/CMakeFiles/glfw.dir/win32_thread.c.obj
+[12/16] Building C object src/CMakeFiles/glfw.dir/wgl_context.c.obj
+[13/16] Building C object src/CMakeFiles/glfw.dir/osmesa_context.c.obj
+[14/16] Building C object src/CMakeFiles/glfw.dir/egl_context.c.obj
+[15/16] Building C object src/CMakeFiles/glfw.dir/win32_window.c.obj
+[16/16] Linking C static library src\libglfw3.a
+
+glfw/3.3.8: Package '8017d78d70cd810fbc93ef6c919368c5a0f66568' built
+glfw/3.3.8: Build folder C:\Users\admin\.conan2\p\b\glfwda36766526193\b\build\Debug
+glfw/3.3.8: Generating the package
+glfw/3.3.8: Packaging in folder C:\Users\admin\.conan2\p\b\glfwda36766526193\p
+glfw/3.3.8: Calling package()
+glfw/3.3.8: Running CMake.install()
+glfw/3.3.8: RUN: cmake --install "C:\Users\admin\.conan2\p\b\glfwda36766526193\b\build\Debug" --prefix "C:/Users/admin/.conan2/p/b/glfwda36766526193/p"
+-- Install configuration: "Debug"
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include/GLFW
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include/GLFW/glfw3.h
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include/GLFW/glfw3native.h
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/cmake/glfw3/glfw3Config.cmake
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/cmake/glfw3/glfw3Targets.cmake
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/cmake/glfw3/glfw3Targets-debug.cmake
+-- Installing: C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/pkgconfig/glfw3.pc
+
+glfw/3.3.8: package(): Packaged 2 '.h' files: glfw3.h, glfw3native.h
+glfw/3.3.8: package(): Packaged 1 '.a' file: libglfw3.a
+glfw/3.3.8: package(): Packaged 1 '.cmake' file: conan-official-glfw-targets.cmake
+glfw/3.3.8: package(): Packaged 1 '.md' file: LICENSE.md
+glfw/3.3.8: Created package revision 3cade9bcfeaaa6c3ef1e89cf09d75b77
+glfw/3.3.8: Package '8017d78d70cd810fbc93ef6c919368c5a0f66568' created
+glfw/3.3.8: Full package reference: glfw/3.3.8#fa80260213e8f8da1315ba152e023e3e:8017d78d70cd810fbc93ef6c919368c5a0f66568#3cade9bcfeaaa6c3ef1e89cf09d75b77
+glfw/3.3.8: Package folder C:\Users\admin\.conan2\p\b\glfwda36766526193\p
+implot/0.16: Sources downloaded from 'conancenter'
+implot/0.16: Calling source() in C:\Users\admin\.conan2\p\implo988cd3cf6d1e8\s\src
+
+-------- Installing package implot/0.16 (4 of 4) --------
+implot/0.16: Building from source
+implot/0.16: Package implot/0.16:84e8697575b591eb7b9eb19bb4aac7396d7347d4
+implot/0.16: Copying sources to build folder
+implot/0.16: Building your package in C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b
+implot/0.16: Calling generate()
+implot/0.16: Generators folder: C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b\build\Debug\generators
+implot/0.16: CMakeToolchain generated: conan_toolchain.cmake
+implot/0.16: CMakeToolchain generated: CMakePresets.json
+implot/0.16: Generating aggregated env files
+implot/0.16: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
+implot/0.16: Calling build()
+implot/0.16: Running CMake.configure()
+implot/0.16: RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/b/build/Debug/generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Debug" "C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b\src\.."
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Using Conan toolchain: C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/b/build/Debug/generators/conan_toolchain.cmake
+-- Conan toolchain: C++ Standard 17 with extensions OFF
+-- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Conan: Target declared 'imgui::imgui'
+-- Configuring done (1.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/b/build/Debug
+
+implot/0.16: Running CMake.build()
+implot/0.16: RUN: cmake --build "C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b\build\Debug" -- -j8
+[1/4] Building CXX object CMakeFiles/implot.dir/src/implot_demo.cpp.obj
+[2/4] Building CXX object CMakeFiles/implot.dir/src/implot.cpp.obj
+C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/b/src/implot.cpp:127: warning: "IMGUI_DEFINE_MATH_OPERATORS" redefined
+  127 | #define IMGUI_DEFINE_MATH_OPERATORS
+      | 
+<command-line>: note: this is the location of the previous definition
+[3/4] Building CXX object CMakeFiles/implot.dir/src/implot_items.cpp.obj
+C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/b/src/implot_items.cpp:25: warning: "IMGUI_DEFINE_MATH_OPERATORS" redefined
+   25 | #define IMGUI_DEFINE_MATH_OPERATORS
+      | 
+<command-line>: note: this is the location of the previous definition
+[4/4] Linking CXX static library libimplot.a
+
+implot/0.16: Package '84e8697575b591eb7b9eb19bb4aac7396d7347d4' built
+implot/0.16: Build folder C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b\build\Debug
+implot/0.16: Generating the package
+implot/0.16: Packaging in folder C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\p
+implot/0.16: Calling package()
+implot/0.16: Running CMake.install()
+implot/0.16: RUN: cmake --install "C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\b\build\Debug" --prefix "C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p"
+-- Install configuration: "Debug"
+-- Installing: C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib/libimplot.a
+-- Installing: C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include/implot.h
+-- Installing: C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include/implot_internal.h
+
+implot/0.16: package(): Packaged 2 '.h' files: implot.h, implot_internal.h
+implot/0.16: package(): Packaged 1 '.a' file: libimplot.a
+implot/0.16: package(): Packaged 1 file: LICENSE
+implot/0.16: package(): Packaged 3 '.cpp' files: implot.cpp, implot_demo.cpp, implot_items.cpp
+implot/0.16: Created package revision 45337748bf002bfa73457bfed661e693
+implot/0.16: Package '84e8697575b591eb7b9eb19bb4aac7396d7347d4' created
+implot/0.16: Full package reference: implot/0.16#ee69cfb6ac7025f523840642ddf32ae3:84e8697575b591eb7b9eb19bb4aac7396d7347d4#45337748bf002bfa73457bfed661e693
+implot/0.16: Package folder C:\Users\admin\.conan2\p\b\implo5b9747c9786cd\p
+WARN: deprecated: Usage of deprecated Conan 1.X features that will be removed in Conan 2.X:
+WARN: deprecated:     'env_info' used in: imgui/1.90
+WARN: deprecated:     'cpp_info.filenames' used in: opengl/system, glfw/3.3.8
+WARN: deprecated:     'cpp_info.names' used in: glfw/3.3.8
+WARN: deprecated:     'cpp_info.build_modules' used in: glfw/3.3.8
+
+======== Finalizing install (deploy, generators) ========
+conanfile.py: Writing generators to C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: Generator 'CMakeDeps' calling 'generate()'
+conanfile.py: Calling generate()
+conanfile.py: Generators folder: C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\conan\build\Debug\generators
+conanfile.py: CMakeToolchain generated: conan_toolchain.cmake
+conanfile.py: Preset 'conan-debug' added to CMakePresets.json. Invoke it manually using 'cmake --preset conan-debug' if using CMake>=3.23
+conanfile.py: If your CMake version is not compatible with CMakePresets (<3.23) call cmake like: 'cmake <path> -G Ninja -DCMAKE_TOOLCHAIN_FILE=C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\conan\build\Debug\generators\conan_toolchain.cmake -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Debug'
+conanfile.py: CMakeToolchain generated: CMakePresets.json
+conanfile.py: Generating aggregated env files
+conanfile.py: Generated aggregated env files: ['conanbuild.bat', 'conanrun.bat']
+Install finished successfully
+-- CMake-Conan: CONAN_GENERATORS_FOLDER=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/Debug/generators
+-- CMake-Conan: CONANFILE=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/conanfile.py
+-- Conan: Target declared 'imgui::imgui'
+-- CMake-Conan: find_package(opengl_system) found, 'conan install' already ran
+-- Conan: Target declared 'opengl::opengl'
+-- CMake-Conan: find_package(glfw3) found, 'conan install' already ran
+-- Conan: Target declared 'glfw'
+-- CMake-Conan: find_package(imgui) found, 'conan install' already ran
+-- Conan: Target declared 'imgui::imgui'
+-- CMake-Conan: find_package(opengl_system) found, 'conan install' already ran
+-- Conan: Target declared 'opengl::opengl'
+-- CMake-Conan: find_package(glfw3) found, 'conan install' already ran
+-- Conan: Target declared 'glfw'
+-- CMake-Conan: find_package(imgui) found, 'conan install' already ran
+-- Conan: Target declared 'imgui::imgui'
+-- CMake-Conan: find_package(imgui) found, 'conan install' already ran
+-- Conan: Target declared 'imgui::imgui'
+-- CMake-Conan: find_package(opengl_system) found, 'conan install' already ran
+-- Conan: Target declared 'opengl::opengl'
+-- CMake-Conan: find_package(implot) found, 'conan install' already ran
+-- Conan: Target declared 'implot::implot'
+-- CMake-Conan: find_package(glfw3) found, 'conan install' already ran
+-- Conan: Target declared 'glfw'
+-- Configuring done (65.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug
