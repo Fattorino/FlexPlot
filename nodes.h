@@ -10,9 +10,9 @@ class DummyNode : public BaseNode
 public:
 	DummyNode() : BaseNode(ImNodeType_Start, 200.f) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual float getOutPinVal(int index = 0) override;
+	float getOutPin(int index) override;
 
 private:
 	BasePin out = BasePin(this, ImNode::PinKind::Output, true, "OUT");
@@ -26,9 +26,9 @@ class SumNode : public BaseNode
 public:
 	SumNode() : BaseNode(ImNodeType_Middle) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual float getOutPinVal(int index = 0) override;
+	float getOutPin(int index) override;
 
 private:
 	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
@@ -44,9 +44,9 @@ class MultiplyNode : public BaseNode
 public:
 	MultiplyNode() : BaseNode(ImNodeType_Middle) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual float getOutPinVal(int index = 0) override;
+	float getOutPin(int index) override;
 
 private:
 	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
@@ -62,9 +62,9 @@ class SubtractNode : public BaseNode
 public:
 	SubtractNode() : BaseNode(ImNodeType_Middle) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual float getOutPinVal(int index = 0) override;
+	float getOutPin(int index) override;
 
 private:
 	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
@@ -80,9 +80,9 @@ class DivideNode : public BaseNode
 public:
 	DivideNode() : BaseNode(ImNodeType_Middle) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual float getOutPinVal(int index = 0) override;
+	float getOutPin(int index) override;
 
 private:
 	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
@@ -98,9 +98,9 @@ class ReadNode : public BaseNode
 public:
 	ReadNode() : BaseNode(ImNodeType_End, 100.f) {}
 
-	virtual void render();
+	void render() override;
 
-	virtual void resolveChain() override;
+	void resolveChain() override;
 
 private:
 	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");

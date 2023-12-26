@@ -1,6 +1,7 @@
 #pragma once
 
 #include <imgui.h>
+#include <utility>
 #include <vector>
 #include <functional>
 #include <memory>
@@ -28,7 +29,7 @@ class ImNodeFlow
 public:
 	friend class BaseNode;
 
-	ImNodeFlow() {}
+	ImNodeFlow() = default;
 
 	void init();
 	void destroy();
@@ -42,13 +43,12 @@ public:
 
 private:
 	ImNode::EditorContext* m_editorContext = nullptr;
-	// ImNode::Detail::EditorContext* m_editorContext = nullptr;
 
 	std::vector<std::shared_ptr<BaseNode>> m_nodes;
 	int m_uniqueID = 1;
-	std::vector<BaseLink> m_nodeLinks;
+	std::vector<BaseLink*> m_nodeLinks;
 
-	bool m_validateMuliLink(BasePin* fromPinPtr, BasePin* toPinPtr);
+	bool m_validateMultiLink(BasePin* fromPinPtr, BasePin* toPinPtr);
 	bool m_validateLink(BasePin* fromPinPtr, BasePin* toPinPtr);
 
 };
@@ -60,28 +60,32 @@ extern ImNodeFlow INF;
 class BasePin
 {
 public:
-	BasePin(BaseNode* parent, ImNode::PinKind kind, bool allowMultuLink, std::string text)
+	BasePin(BaseNode* parent, ImNode::PinKind kind, bool allowMultiLink, std::string text)
 	{
 		m_parent = parent;
 		m_kind = kind;
-		m_allowMultuLink = allowMultuLink;
-		m_text = text;
+        m_allowMultiLink = allowMultiLink;
+		m_text = std::move(text);
 	}
 
 	void render();
 
-	bool isInput() { return m_kind == ImNode::PinKind::Input; }
+    void setLink(BaseLink* link) { m_link = link; }
 
-	ImNode::PinId getID() { return m_id; }
+	[[nodiscard]] ImNode::PinId getID() const { return m_id; }
 	BaseNode* getParent() { return m_parent; }
-	bool canMultiLink() { return m_allowMultuLink; }
+	bool isInput() { return m_kind == ImNode::PinKind::Input; }
+	[[nodiscard]] bool canMultiLink() const { return m_allowMultiLink; }
+    BaseLink* getLink() { return m_link; }
 
 private:
 	uintptr_t m_id = reinterpret_cast<uintptr_t>(this);
+	ImNode::PinKind m_kind;
 
 	BaseNode* m_parent;
-	ImNode::PinKind m_kind;
-	bool m_allowMultuLink;
+    BaseLink* m_link = nullptr;
+	bool m_allowMultiLink;
+
 	std::string m_text;
 
 };
@@ -109,7 +113,7 @@ public:
 class BaseNode
 {
 public:
-	BaseNode(int nodeType, float width = 0.f)
+	explicit BaseNode(int nodeType, float width = 0.f)
 	{
 		m_id = INF.m_uniqueID++;
 		m_nodeType = nodeType;
@@ -118,14 +122,15 @@ public:
 
 	virtual void render() = 0;
 
-	virtual float getOutPinVal(int index = 0) { return 0.f; }
+	//virtual std::vector<float> getOutPin(int index) { return {}; }
+	virtual float getOutPin(int index) { return {}; }
 	virtual void resolveChain() {}
 
 	ImNode::NodeId getID() { return m_id; }
-	int getNodeType() { return m_nodeType; }
-	float getWidth() { return m_width; }
+	[[nodiscard]] int getNodeType() const { return m_nodeType; }
+	[[nodiscard]] float getWidth() const { return m_width; }
 
-	std::vector<BaseLink>& getNodeLinks() { return INF.m_nodeLinks; }
+	// std::vector<BaseLink>& getNodeLinks() { return INF.m_nodeLinks; }
 
 private:
 	ImNode::NodeId m_id;

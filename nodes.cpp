@@ -15,7 +15,7 @@ void DummyNode::render()
 	ImNode::EndNode();
 }
 
-float DummyNode::getOutPinVal(int index)
+float DummyNode::getOutPin(int index)
 {
 	return val;
 }
@@ -37,20 +37,12 @@ void SumNode::render()
 	ImNode::EndNode();
 }
 
-float SumNode::getOutPinVal(int index)
+float SumNode::getOutPin(int index)
 {
-	float res = 0.f;
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inA)
-			res += node.fromPin->getParent()->getOutPinVal();
-	}
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inB)
-			res += node.fromPin->getParent()->getOutPinVal();
-	}
-	return res;
+	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+    res += (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+
+    return res;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -70,20 +62,12 @@ void MultiplyNode::render()
 	ImNode::EndNode();
 }
 
-float MultiplyNode::getOutPinVal(int index)
+float MultiplyNode::getOutPin(int index)
 {
-	float a = 0.f, b = 0.f;
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inA)
-			a = node.fromPin->getParent()->getOutPinVal();
-	}
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inB)
-			b = node.fromPin->getParent()->getOutPinVal();
-	}
-	return a * b;
+	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+    res *= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+
+	return res;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -103,19 +87,11 @@ void SubtractNode::render()
 	ImNode::EndNode();
 }
 
-float SubtractNode::getOutPinVal(int index)
+float SubtractNode::getOutPin(int index)
 {
-	float res = 0.f;
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inA)
-			res = node.fromPin->getParent()->getOutPinVal();
-	}
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inB)
-			res -= node.fromPin->getParent()->getOutPinVal();
-	}
+	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+    res -= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+
 	return res;
 }
 
@@ -136,20 +112,12 @@ void DivideNode::render()
 	ImNode::EndNode();
 }
 
-float DivideNode::getOutPinVal(int index)
+float DivideNode::getOutPin(int index)
 {
-	float a = 0.f, b = 0.f;
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inA)
-			a = node.fromPin->getParent()->getOutPinVal();
-	}
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inB)
-			b = node.fromPin->getParent()->getOutPinVal();
-	}
-	return a / b;
+	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+    res /= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+
+	return res;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -170,10 +138,5 @@ void ReadNode::render()
 
 void ReadNode::resolveChain()
 {
-	val = 0.f;
-	for (auto& node : getNodeLinks())
-	{
-		if (node.toPin == &inA)
-			val = node.fromPin->getParent()->getOutPinVal();
-	}
+    val = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : -10.0f;
 }

@@ -21,22 +21,22 @@ void BasePin::render()
 
 // ---------------------------------------------------------------------------------------------------------------------
 
-bool ImNodeFlow::m_validateMuliLink(BasePin* fromPinPtr, BasePin* toPinPtr)
+bool ImNodeFlow::m_validateMultiLink(BasePin* fromPinPtr, BasePin* toPinPtr)
 {
 	if (!fromPinPtr->canMultiLink())
 	{
-		for (auto& node : m_nodeLinks)
+		for (auto& link : m_nodeLinks)
 		{
-			if (node.fromPin == fromPinPtr || node.toPin == fromPinPtr)
+			if (link->fromPin == fromPinPtr || link->toPin == fromPinPtr)
 				return false;
 		}
 	}
 
 	if (!toPinPtr->canMultiLink())
 	{
-		for (auto& node : m_nodeLinks)
+		for (auto& link : m_nodeLinks)
 		{
-			if (node.fromPin == toPinPtr || node.toPin == toPinPtr)
+			if (link->fromPin == toPinPtr || link->toPin == toPinPtr)
 				return false;
 		}
 	}
@@ -46,7 +46,8 @@ bool ImNodeFlow::m_validateMuliLink(BasePin* fromPinPtr, BasePin* toPinPtr)
 
 bool ImNodeFlow::m_validateLink(BasePin* fromPinPtr, BasePin* toPinPtr)
 {
-	if (fromPinPtr->isInput() != toPinPtr->isInput() && fromPinPtr->getParent() != toPinPtr->getParent() && m_validateMuliLink(fromPinPtr, toPinPtr))
+	if (fromPinPtr->isInput() != toPinPtr->isInput() && fromPinPtr->getParent() != toPinPtr->getParent() &&
+            m_validateMultiLink(fromPinPtr, toPinPtr))
 	{
 		return true;
 	}
@@ -79,7 +80,7 @@ void ImNodeFlow::update()
 
 	// Submit Links
 	for (auto& link : m_nodeLinks)
-		ImNode::Link(link.id, link.fromPin->getID(), link.toPin->getID());
+		ImNode::Link(link->id, link->fromPin->getID(), link->toPin->getID());
 
 	// Handle Link Creation
 	if (ImNode::BeginCreate())
@@ -87,21 +88,29 @@ void ImNodeFlow::update()
 		ImNode::PinId fromPinId, toPinId;
 		if (ImNode::QueryNewLink(&fromPinId, &toPinId) && fromPinId && toPinId)
 		{
-			BasePin* fromPinPtr = reinterpret_cast<BasePin*>(fromPinId.Get());
-			BasePin* toPinPtr = reinterpret_cast<BasePin*>(toPinId.Get());
+			auto* fromPinPtr = reinterpret_cast<BasePin*>(fromPinId.Get());
+			auto* toPinPtr = reinterpret_cast<BasePin*>(toPinId.Get());
 
 			if (m_validateLink(fromPinPtr, toPinPtr))
 			{
 				// ImNode::AcceptNewItem() return true when user release mouse button.
 				if (ImNode::AcceptNewItem())
 				{
-					if (!fromPinPtr->isInput())
-						m_nodeLinks.emplace_back(&m_uniqueID, fromPinPtr, toPinPtr);
+					if (toPinPtr->isInput())
+                    {
+                        auto* link = new BaseLink(&m_uniqueID, fromPinPtr, toPinPtr);
+						m_nodeLinks.emplace_back(link);
+                        toPinPtr->setLink(link);
+                    }
 					else
-						m_nodeLinks.emplace_back(&m_uniqueID, toPinPtr, fromPinPtr);
+                    {
+                        auto* link = new BaseLink(&m_uniqueID, toPinPtr, fromPinPtr);
+                        m_nodeLinks.emplace_back(link);
+                        fromPinPtr->setLink(link);
+                    }
 
 					// Draw new link.
-					ImNode::Link(m_nodeLinks.back().id, m_nodeLinks.back().fromPin->getID(), m_nodeLinks.back().toPin->getID());
+					ImNode::Link(m_nodeLinks.back()->id, m_nodeLinks.back()->fromPin->getID(), m_nodeLinks.back()->toPin->getID());
 				}
 			}
 		}
@@ -120,9 +129,12 @@ void ImNodeFlow::update()
 			{
 				for (int i = 0; i < m_nodeLinks.size(); i++)
 				{
-					if (m_nodeLinks[i].id == deletedLinkId)
+					if (m_nodeLinks[i]->id == deletedLinkId)
 					{
-						m_nodeLinks.erase(m_nodeLinks.begin() + i);
+                        auto it = m_nodeLinks.begin() + i;
+                        (*it)->toPin->setLink(nullptr);
+						m_nodeLinks.erase(it);
+                        //delete (*it); // FIXME: IM DELETING THE WRONG THING!!!!
 						break;
 					}
 				}
