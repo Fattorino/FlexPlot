@@ -18,25 +18,24 @@ private:
 	void m_nodesBar();
 
 public:
-	virtual void onCreate() override
+	void onCreate() override
 	{
 		INF.init();
 
-		INF.pushNode<DummyNode>();
-		INF.pushNode<DummyNode>();
+		INF.pushNode<CsvColumnReader>();
 		INF.pushNode<SumNode>();
 		INF.pushNode<MultiplyNode>();
 		INF.pushNode<ReadNode>();
 	}
 
-	virtual void onDestroy() override
+	void onDestroy() override
 	{
 		INF.destroy();
 	}
     
-	virtual void update();
+	void update() override;
 
-	virtual void menuBar() override
+	void menuBar() override
 	{
 		if (ImGui::BeginMenu("File"))
 		{

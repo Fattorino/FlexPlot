@@ -122,15 +122,12 @@ public:
 
 	virtual void render() = 0;
 
-	//virtual std::vector<float> getOutPin(int index) { return {}; }
-	virtual float getOutPin(int index) { return {}; }
+	virtual std::vector<float> getOut(int index) { return {}; }
 	virtual void resolveChain() {}
 
 	ImNode::NodeId getID() { return m_id; }
 	[[nodiscard]] int getNodeType() const { return m_nodeType; }
 	[[nodiscard]] float getWidth() const { return m_width; }
-
-	// std::vector<BaseLink>& getNodeLinks() { return INF.m_nodeLinks; }
 
 private:
 	ImNode::NodeId m_id;

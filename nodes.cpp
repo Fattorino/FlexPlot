@@ -1,23 +1,37 @@
 #include "nodes.h"
 
-void DummyNode::render()
+void CsvColumnReader::render()
 {
 	ImNode::BeginNode(getID());
 
 	ImGui::Dummy(ImVec2(getWidth(), 0.f));
-	ImGui::Text("Dummy input float");
+	ImGui::Text("CSV Column reader");
 
-	ImGui::SetNextItemWidth(70.f);
-	ImGui::DragFloat(std::to_string(getID().Get()).c_str(), &val);
-	ImGui::SameLine();
+	// ImGui::SetNextItemWidth(70.f);
+	ImGui::InputTextWithHint("##InputCsvPath", "Fil path (.csv)", &m_filepath);
+    if(ImGui::Button("Load"))
+    {
+        m_doc.Load(m_filepath);
+        // m_columnsName.clear();
+        m_columnsName = m_doc.GetColumnNames();
+    }
+
+    ImToro::vCombo("Column", &m_selectedCol, m_columnsName);
+
+    if(ImGui::Button("Refresh"))
+    {
+        m_data = m_doc.GetColumn<float>(m_selectedCol);
+    }
+
+	// ImGui::SameLine();
 	out.render();
 
 	ImNode::EndNode();
 }
 
-float DummyNode::getOutPin(int index)
+std::vector<float> CsvColumnReader::getOut(int index)
 {
-	return val;
+	return m_data;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -37,12 +51,17 @@ void SumNode::render()
 	ImNode::EndNode();
 }
 
-float SumNode::getOutPin(int index)
+std::vector<float> SumNode::getOut(int index)
 {
-	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
-    res += (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+    m_data.clear();
+    for (int i = 0; i < inA.getLink()->fromPin->getParent()->getOut(0).size() && i < inB.getLink()->fromPin->getParent()->getOut(0).size(); ++i)
+    {
+        float a = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOut(0)[i] : 0.0f;
+        float b = (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOut(0)[i] : 0.0f;
+        m_data.emplace_back(a + b);
+    }
 
-    return res;
+    return m_data;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -62,12 +81,17 @@ void MultiplyNode::render()
 	ImNode::EndNode();
 }
 
-float MultiplyNode::getOutPin(int index)
+std::vector<float> MultiplyNode::getOut(int index)
 {
-	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
-    res *= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+    m_data.clear();
+    for (int i = 0; i < inA.getLink()->fromPin->getParent()->getOut(0).size() && i < inB.getLink()->fromPin->getParent()->getOut(0).size(); ++i)
+    {
+        float a = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOut(0)[i] : 1.0f;
+        float b = (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOut(0)[i] : 1.0f;
+        m_data.emplace_back(a * b);
+    }
 
-	return res;
+    return m_data;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -87,12 +111,17 @@ void SubtractNode::render()
 	ImNode::EndNode();
 }
 
-float SubtractNode::getOutPin(int index)
+std::vector<float> SubtractNode::getOut(int index)
 {
-	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
-    res -= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 0.0f;
+    m_data.clear();
+    for (int i = 0; i < inA.getLink()->fromPin->getParent()->getOut(0).size() && i < inB.getLink()->fromPin->getParent()->getOut(0).size(); ++i)
+    {
+        float a = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOut(0)[i] : 0.0f;
+        float b = (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOut(0)[i] : 0.0f;
+        m_data.emplace_back(a - b);
+    }
 
-	return res;
+    return m_data;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -112,12 +141,17 @@ void DivideNode::render()
 	ImNode::EndNode();
 }
 
-float DivideNode::getOutPin(int index)
+std::vector<float> DivideNode::getOut(int index)
 {
-	float res = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
-    res /= (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOutPin(0) : 1.0f;
+    m_data.clear();
+    for (int i = 0; i < inA.getLink()->fromPin->getParent()->getOut(0).size() && i < inB.getLink()->fromPin->getParent()->getOut(0).size(); ++i)
+    {
+        float a = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOut(0)[i] : 1.0f;
+        float b = (inB.getLink()) ? inB.getLink()->fromPin->getParent()->getOut(0)[i] : 1.0f;
+        m_data.emplace_back(a / b);
+    }
 
-	return res;
+    return m_data;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -130,13 +164,13 @@ void ReadNode::render()
 	ImGui::Text("IN VAL:");
 
 	inA.render();
-	ImGui::SameLine();
-	ImGui::Text("%f", val);
+	//ImGui::SameLine();
+	//ImGui::Text("%f", val);
 
 	ImNode::EndNode();
 }
 
 void ReadNode::resolveChain()
 {
-    val = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOutPin(0) : -10.0f;
+    m_data = (inA.getLink()) ? inA.getLink()->fromPin->getParent()->getOut(0) : std::vector<float>();
 }

@@ -9,7 +9,9 @@ set(SOURCE_FILES
         imgui_impl_glfw.h
         imgui_impl_opengl3.cpp
         imgui_impl_opengl3.h
-        imgui_impl_opengl3_loader.h)
+        imgui_impl_opengl3_loader.h
+        imgui_stdlib.cpp
+        imgui_stdlib.h)
 
 # CREATE LIBRARY FROM SOURCE_FILES
 add_library(imgui_bindings SHARED STATIC ${SOURCE_FILES})

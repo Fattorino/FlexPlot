@@ -153,6 +153,14 @@ build includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_opengl3.c
   OBJECT_DIR = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir
   OBJECT_FILE_DIR = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir
 
+build includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_stdlib.cpp.obj: CXX_COMPILER__imgui_bindings_unscanned_Debug C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings/imgui_stdlib.cpp || cmake_object_order_depends_target_imgui_bindings
+  DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
+  DEP_FILE = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir\imgui_stdlib.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include
+  OBJECT_DIR = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir
+  OBJECT_FILE_DIR = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target imgui_bindings
@@ -161,7 +169,7 @@ build includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_opengl3.c
 #############################################
 # Link the static library includes\imgui_bindings\libimgui_bindings.a
 
-build includes/imgui_bindings/libimgui_bindings.a: CXX_STATIC_LIBRARY_LINKER__imgui_bindings_Debug includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_glfw.cpp.obj includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_opengl3.cpp.obj
+build includes/imgui_bindings/libimgui_bindings.a: CXX_STATIC_LIBRARY_LINKER__imgui_bindings_Debug includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_glfw.cpp.obj includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_impl_opengl3.cpp.obj includes/imgui_bindings/CMakeFiles/imgui_bindings.dir/imgui_stdlib.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = includes\imgui_bindings\CMakeFiles\imgui_bindings.dir
   POST_BUILD = cd .

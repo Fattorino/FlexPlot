@@ -127,17 +127,16 @@ void ImNodeFlow::update()
 			// If you agree that link can be deleted, accept deletion.
 			if (ImNode::AcceptDeletedItem())
 			{
-				for (int i = 0; i < m_nodeLinks.size(); i++)
-				{
-					if (m_nodeLinks[i]->id == deletedLinkId)
-					{
-                        auto it = m_nodeLinks.begin() + i;
-                        (*it)->toPin->setLink(nullptr);
-						m_nodeLinks.erase(it);
-                        //delete (*it); // FIXME: IM DELETING THE WRONG THING!!!!
-						break;
-					}
-				}
+                for (auto& link : m_nodeLinks)
+                {
+                    if (link->id == deletedLinkId)
+                    {
+                        link->toPin->setLink(nullptr);
+                        delete link;
+                        link = nullptr;
+                    }
+                }
+                m_nodeLinks.erase(std::remove(m_nodeLinks.begin(), m_nodeLinks.end(), nullptr), m_nodeLinks.end());
 			}
 			// You may reject link deletion by calling:
 			// ImNode::RejectDeletedItem();
