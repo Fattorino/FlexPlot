@@ -52,6 +52,11 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImNodeFlow/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/nativefiledialog-extended/cmake_install.cmake")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

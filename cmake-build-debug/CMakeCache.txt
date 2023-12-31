@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Build a shared library instead of static
+BUILD_SHARED_LIBS:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/addr2line.exe
 
@@ -162,6 +165,21 @@ CMAKE_PROJECT_NAME:STATIC=FlexPlot
 //No help, variable specified on the command line.
 CMAKE_PROJECT_TOP_LEVEL_INCLUDES:UNINITIALIZED=conan_provider.cmake
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.1.1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe
 
@@ -260,6 +278,12 @@ FlexPlot_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 FlexPlot_SOURCE_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot
 
+//Build tests for nfd
+NFD_BUILD_TESTS:BOOL=OFF
+
+//Generate install target for nfd
+NFD_INSTALL:BOOL=OFF
+
 //Value Computed by CMake
 ToroImGuiHandle_BINARY_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImGuiHandle
 
@@ -295,6 +319,15 @@ imgui_bindings_SOURCE_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui
 
 //The directory containing a CMake configuration file for implot.
 implot_DIR:PATH=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/Debug/generators
+
+//Value Computed by CMake
+nativefiledialog-extended_BINARY_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/nativefiledialog-extended
+
+//Value Computed by CMake
+nativefiledialog-extended_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+nativefiledialog-extended_SOURCE_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended
 
 //The directory containing a CMake configuration file for opengl_system.
 opengl_system_DIR:PATH=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/Debug/generators
@@ -402,7 +435,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

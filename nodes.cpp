@@ -6,9 +6,29 @@ void CsvColumnReader::render()
 
 	ImGui::Dummy(ImVec2(getWidth(), 0.f));
 	ImGui::Text("CSV Column reader");
+    ImGui::Spacing();
 
-	// ImGui::SetNextItemWidth(70.f);
+	ImGui::SetNextItemWidth(150.f);
 	ImGui::InputTextWithHint("##InputCsvPath", "Fil path (.csv)", &m_filepath);
+    ImGui::SameLine();
+    if(ImGui::Button("Search"))
+    {
+        nfdchar_t* outPath;
+        nfdfilteritem_t filterItem[1] = { { "CSV file", "csv,txt" }};
+        nfdresult_t result = NFD_OpenDialog(&outPath, filterItem, 1, nullptr);
+
+        NFD_Init();
+
+        if (result == NFD_OKAY)
+        {
+            m_filepath.assign(outPath);
+            NFD_FreePath(outPath);
+        }
+        else if (result == NFD_CANCEL) { puts("User pressed cancel."); }
+        else { printf("Error: %s\n", NFD_GetError()); }
+
+        NFD_Quit();
+    }
     if(ImGui::Button("Load"))
     {
         m_doc.Load(m_filepath);
@@ -16,6 +36,7 @@ void CsvColumnReader::render()
         m_columnsName = m_doc.GetColumnNames();
     }
 
+    ImGui::SetNextItemWidth(150.f);
     ImToro::vCombo("Column", &m_selectedCol, m_columnsName);
 
     if(ImGui::Button("Refresh"))
@@ -23,7 +44,6 @@ void CsvColumnReader::render()
         m_data = m_doc.GetColumn<float>(m_selectedCol);
     }
 
-	// ImGui::SameLine();
 	out.render();
 
 	ImNode::EndNode();

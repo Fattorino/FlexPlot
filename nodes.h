@@ -6,6 +6,7 @@
 #include "includes/imgui_bindings/imgui_stdlib.h"
 #include "includes/header_only/csvparser.h"
 #include "includes/ToroImGuiHandle/ToroImGuiHandle.h"
+#include <nfd.hpp>
 
 
 class CsvColumnReader : public BaseNode

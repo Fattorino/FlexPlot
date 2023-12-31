@@ -47,13 +47,13 @@ cmake_ninja_workdir = C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/
 #############################################
 # Order-only phony target for FlexPlot
 
-build cmake_object_order_depends_target_FlexPlot: phony || cmake_object_order_depends_target_ToroImGuiHandle cmake_object_order_depends_target_ToroImNodeFlow cmake_object_order_depends_target_imgui_bindings
+build cmake_object_order_depends_target_FlexPlot: phony || cmake_object_order_depends_target_ToroImGuiHandle cmake_object_order_depends_target_ToroImNodeFlow cmake_object_order_depends_target_imgui_bindings cmake_object_order_depends_target_nfd
 
 build CMakeFiles/FlexPlot.dir/main.cpp.obj: CXX_COMPILER__FlexPlot_unscanned_Debug C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/main.cpp || cmake_object_order_depends_target_FlexPlot
   DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
   DEP_FILE = CMakeFiles\FlexPlot.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
+  INCLUDES = -IC:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/include -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
   OBJECT_DIR = CMakeFiles\FlexPlot.dir
   OBJECT_FILE_DIR = CMakeFiles\FlexPlot.dir
 
@@ -61,7 +61,7 @@ build CMakeFiles/FlexPlot.dir/FlexPlot.cpp.obj: CXX_COMPILER__FlexPlot_unscanned
   DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
   DEP_FILE = CMakeFiles\FlexPlot.dir\FlexPlot.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
+  INCLUDES = -IC:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/include -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
   OBJECT_DIR = CMakeFiles\FlexPlot.dir
   OBJECT_FILE_DIR = CMakeFiles\FlexPlot.dir
 
@@ -69,7 +69,7 @@ build CMakeFiles/FlexPlot.dir/nodes.cpp.obj: CXX_COMPILER__FlexPlot_unscanned_De
   DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
   DEP_FILE = CMakeFiles\FlexPlot.dir\nodes.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
+  INCLUDES = -IC:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/include -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
   OBJECT_DIR = CMakeFiles\FlexPlot.dir
   OBJECT_FILE_DIR = CMakeFiles\FlexPlot.dir
 
@@ -77,7 +77,7 @@ build CMakeFiles/FlexPlot.dir/includes/implot_demo/implot_demo.cpp.obj: CXX_COMP
   DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
   DEP_FILE = CMakeFiles\FlexPlot.dir\includes\implot_demo\implot_demo.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
+  INCLUDES = -IC:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/include -isystem C:/Users/admin/.conan2/p/b/imguic170492e74256/p/include -isystem C:/Users/admin/.conan2/p/b/glfwda36766526193/p/include -isystem C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/include
   OBJECT_DIR = CMakeFiles\FlexPlot.dir
   OBJECT_FILE_DIR = CMakeFiles\FlexPlot.dir\includes\implot_demo
 
@@ -89,9 +89,9 @@ build CMakeFiles/FlexPlot.dir/includes/implot_demo/implot_demo.cpp.obj: CXX_COMP
 #############################################
 # Link the executable FlexPlot.exe
 
-build FlexPlot.exe: CXX_EXECUTABLE_LINKER__FlexPlot_Debug CMakeFiles/FlexPlot.dir/main.cpp.obj CMakeFiles/FlexPlot.dir/FlexPlot.cpp.obj CMakeFiles/FlexPlot.dir/nodes.cpp.obj CMakeFiles/FlexPlot.dir/includes/implot_demo/implot_demo.cpp.obj | includes/imgui_bindings/libimgui_bindings.a includes/ToroImGuiHandle/libToroImGuiHandle.a includes/ToroImNodeFlow/libToroImNodeFlow.a includes/imgui_bindings/libimgui_bindings.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib/libimplot.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a || includes/ToroImGuiHandle/libToroImGuiHandle.a includes/ToroImNodeFlow/libToroImNodeFlow.a includes/imgui_bindings/libimgui_bindings.a
+build FlexPlot.exe: CXX_EXECUTABLE_LINKER__FlexPlot_Debug CMakeFiles/FlexPlot.dir/main.cpp.obj CMakeFiles/FlexPlot.dir/FlexPlot.cpp.obj CMakeFiles/FlexPlot.dir/nodes.cpp.obj CMakeFiles/FlexPlot.dir/includes/implot_demo/implot_demo.cpp.obj | includes/imgui_bindings/libimgui_bindings.a includes/ToroImGuiHandle/libToroImGuiHandle.a includes/ToroImNodeFlow/libToroImNodeFlow.a includes/nativefiledialog-extended/src/libnfd.a includes/imgui_bindings/libimgui_bindings.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib/libimplot.a C$:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a C$:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a || includes/ToroImGuiHandle/libToroImGuiHandle.a includes/ToroImNodeFlow/libToroImNodeFlow.a includes/imgui_bindings/libimgui_bindings.a includes/nativefiledialog-extended/src/libnfd.a
   FLAGS = -g
-  LINK_LIBRARIES = includes/imgui_bindings/libimgui_bindings.a  includes/ToroImGuiHandle/libToroImGuiHandle.a  includes/ToroImNodeFlow/libToroImNodeFlow.a  includes/imgui_bindings/libimgui_bindings.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib/libimplot.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  -limm32  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  -lopengl32  -lgdi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = includes/imgui_bindings/libimgui_bindings.a  includes/ToroImGuiHandle/libToroImGuiHandle.a  includes/ToroImNodeFlow/libToroImNodeFlow.a  includes/nativefiledialog-extended/src/libnfd.a  includes/imgui_bindings/libimgui_bindings.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  C:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib/libimplot.a  C:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib/libimgui.a  -limm32  C:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib/libglfw3.a  -lopengl32  -lgdi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/Users/admin/.conan2/p/b/imguic170492e74256/p/lib   -LC:/Users/admin/.conan2/p/b/glfwda36766526193/p/lib   -LC:/Users/admin/.conan2/p/b/implo5b9747c9786cd/p/lib
   OBJECT_DIR = CMakeFiles\FlexPlot.dir
   POST_BUILD = cd .
@@ -355,6 +355,95 @@ build includes/ToroImNodeFlow/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build includes/ToroImNodeFlow/rebuild_cache: phony includes/ToroImNodeFlow/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/AA-FILE/PROGRAMS/CPP/FlexPlot/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build includes/nativefiledialog-extended/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\includes\nativefiledialog-extended && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build includes/nativefiledialog-extended/edit_cache: phony includes/nativefiledialog-extended/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build includes/nativefiledialog-extended/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\includes\nativefiledialog-extended && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\AA-FILE\PROGRAMS\CPP\FlexPlot -BC:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build includes/nativefiledialog-extended/rebuild_cache: phony includes/nativefiledialog-extended/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target nfd
+
+
+#############################################
+# Order-only phony target for nfd
+
+build cmake_object_order_depends_target_nfd: phony || includes/nativefiledialog-extended/src/CMakeFiles/nfd.dir
+
+build includes/nativefiledialog-extended/src/CMakeFiles/nfd.dir/nfd_win.cpp.obj: CXX_COMPILER__nfd_unscanned_Debug C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/nfd_win.cpp || cmake_object_order_depends_target_nfd
+  DEFINES = -DIMGUI_DEFINE_MATH_OPERATORS
+  DEP_FILE = includes\nativefiledialog-extended\src\CMakeFiles\nfd.dir\nfd_win.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always -nostdlib -fno-exceptions -fno-rtti
+  INCLUDES = -IC:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/include
+  OBJECT_DIR = includes\nativefiledialog-extended\src\CMakeFiles\nfd.dir
+  OBJECT_FILE_DIR = includes\nativefiledialog-extended\src\CMakeFiles\nfd.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target nfd
+
+
+#############################################
+# Link the static library includes\nativefiledialog-extended\src\libnfd.a
+
+build includes/nativefiledialog-extended/src/libnfd.a: CXX_STATIC_LIBRARY_LINKER__nfd_Debug includes/nativefiledialog-extended/src/CMakeFiles/nfd.dir/nfd_win.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = includes\nativefiledialog-extended\src\CMakeFiles\nfd.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = includes\nativefiledialog-extended\src\libnfd.a
+  TARGET_PDB = nfd.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build includes/nativefiledialog-extended/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\includes\nativefiledialog-extended\src && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build includes/nativefiledialog-extended/src/edit_cache: phony includes/nativefiledialog-extended/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build includes/nativefiledialog-extended/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug\includes\nativefiledialog-extended\src && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\AA-FILE\PROGRAMS\CPP\FlexPlot -BC:\AA-FILE\PROGRAMS\CPP\FlexPlot\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build includes/nativefiledialog-extended/src/rebuild_cache: phony includes/nativefiledialog-extended/src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build FlexPlot: phony FlexPlot.exe
@@ -371,6 +460,10 @@ build libToroImNodeFlow.a: phony includes/ToroImNodeFlow/libToroImNodeFlow.a
 
 build libimgui_bindings.a: phony includes/imgui_bindings/libimgui_bindings.a
 
+build libnfd.a: phony includes/nativefiledialog-extended/src/libnfd.a
+
+build nfd: phony includes/nativefiledialog-extended/src/libnfd.a
+
 # =============================================================================
 # Folder targets.
 
@@ -379,7 +472,7 @@ build libimgui_bindings.a: phony includes/imgui_bindings/libimgui_bindings.a
 #############################################
 # Folder: C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug
 
-build all: phony FlexPlot.exe includes/imgui_bindings/all includes/ToroImGuiHandle/all includes/ToroImNodeFlow/all
+build all: phony FlexPlot.exe includes/imgui_bindings/all includes/ToroImGuiHandle/all includes/ToroImNodeFlow/all includes/nativefiledialog-extended/all
 
 # =============================================================================
 
@@ -403,20 +496,34 @@ build includes/ToroImNodeFlow/all: phony includes/ToroImNodeFlow/libToroImNodeFl
 build includes/imgui_bindings/all: phony includes/imgui_bindings/libimgui_bindings.a
 
 # =============================================================================
+
+#############################################
+# Folder: C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/nativefiledialog-extended
+
+build includes/nativefiledialog-extended/all: phony includes/nativefiledialog-extended/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/nativefiledialog-extended/src
+
+build includes/nativefiledialog-extended/src/all: phony includes/nativefiledialog-extended/src/libnfd.a
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conan_provider.cmake C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conanfile.py C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImGuiHandle/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImNodeFlow/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake conan/build/Debug/generators/cmakedeps_macros.cmake conan/build/Debug/generators/glfw3-Target-debug.cmake conan/build/Debug/generators/glfw3-config-version.cmake conan/build/Debug/generators/glfw3-config.cmake conan/build/Debug/generators/glfw3-debug-x86_64-data.cmake conan/build/Debug/generators/glfw3Targets.cmake conan/build/Debug/generators/imgui-Target-debug.cmake conan/build/Debug/generators/imgui-config-version.cmake conan/build/Debug/generators/imgui-config.cmake conan/build/Debug/generators/imgui-debug-x86_64-data.cmake conan/build/Debug/generators/imguiTargets.cmake conan/build/Debug/generators/implot-Target-debug.cmake conan/build/Debug/generators/implot-config-version.cmake conan/build/Debug/generators/implot-config.cmake conan/build/Debug/generators/implot-debug-x86_64-data.cmake conan/build/Debug/generators/implotTargets.cmake conan/build/Debug/generators/opengl_system-Target-debug.cmake conan/build/Debug/generators/opengl_system-config-version.cmake conan/build/Debug/generators/opengl_system-config.cmake conan/build/Debug/generators/opengl_system-debug-x86_64-data.cmake conan/build/Debug/generators/opengl_systemTargets.cmake
+build build.ninja: RERUN_CMAKE | C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conan_provider.cmake C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conanfile.py C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImGuiHandle/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImNodeFlow/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake conan/build/Debug/generators/cmakedeps_macros.cmake conan/build/Debug/generators/glfw3-Target-debug.cmake conan/build/Debug/generators/glfw3-config-version.cmake conan/build/Debug/generators/glfw3-config.cmake conan/build/Debug/generators/glfw3-debug-x86_64-data.cmake conan/build/Debug/generators/glfw3Targets.cmake conan/build/Debug/generators/imgui-Target-debug.cmake conan/build/Debug/generators/imgui-config-version.cmake conan/build/Debug/generators/imgui-config.cmake conan/build/Debug/generators/imgui-debug-x86_64-data.cmake conan/build/Debug/generators/imguiTargets.cmake conan/build/Debug/generators/implot-Target-debug.cmake conan/build/Debug/generators/implot-config-version.cmake conan/build/Debug/generators/implot-config.cmake conan/build/Debug/generators/implot-debug-x86_64-data.cmake conan/build/Debug/generators/implotTargets.cmake conan/build/Debug/generators/opengl_system-Target-debug.cmake conan/build/Debug/generators/opengl_system-config-version.cmake conan/build/Debug/generators/opengl_system-config.cmake conan/build/Debug/generators/opengl_system-debug-x86_64-data.cmake conan/build/Debug/generators/opengl_systemTargets.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conan_provider.cmake C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conanfile.py C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImGuiHandle/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImNodeFlow/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake conan/build/Debug/generators/cmakedeps_macros.cmake conan/build/Debug/generators/glfw3-Target-debug.cmake conan/build/Debug/generators/glfw3-config-version.cmake conan/build/Debug/generators/glfw3-config.cmake conan/build/Debug/generators/glfw3-debug-x86_64-data.cmake conan/build/Debug/generators/glfw3Targets.cmake conan/build/Debug/generators/imgui-Target-debug.cmake conan/build/Debug/generators/imgui-config-version.cmake conan/build/Debug/generators/imgui-config.cmake conan/build/Debug/generators/imgui-debug-x86_64-data.cmake conan/build/Debug/generators/imguiTargets.cmake conan/build/Debug/generators/implot-Target-debug.cmake conan/build/Debug/generators/implot-config-version.cmake conan/build/Debug/generators/implot-config.cmake conan/build/Debug/generators/implot-debug-x86_64-data.cmake conan/build/Debug/generators/implotTargets.cmake conan/build/Debug/generators/opengl_system-Target-debug.cmake conan/build/Debug/generators/opengl_system-config-version.cmake conan/build/Debug/generators/opengl_system-config.cmake conan/build/Debug/generators/opengl_system-debug-x86_64-data.cmake conan/build/Debug/generators/opengl_systemTargets.cmake: phony
+build C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conan_provider.cmake C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/conanfile.py C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImGuiHandle/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImNodeFlow/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/CMakeLists.txt C$:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/nativefiledialog-extended/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindDependencyMacro.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake conan/build/Debug/generators/cmakedeps_macros.cmake conan/build/Debug/generators/glfw3-Target-debug.cmake conan/build/Debug/generators/glfw3-config-version.cmake conan/build/Debug/generators/glfw3-config.cmake conan/build/Debug/generators/glfw3-debug-x86_64-data.cmake conan/build/Debug/generators/glfw3Targets.cmake conan/build/Debug/generators/imgui-Target-debug.cmake conan/build/Debug/generators/imgui-config-version.cmake conan/build/Debug/generators/imgui-config.cmake conan/build/Debug/generators/imgui-debug-x86_64-data.cmake conan/build/Debug/generators/imguiTargets.cmake conan/build/Debug/generators/implot-Target-debug.cmake conan/build/Debug/generators/implot-config-version.cmake conan/build/Debug/generators/implot-config.cmake conan/build/Debug/generators/implot-debug-x86_64-data.cmake conan/build/Debug/generators/implotTargets.cmake conan/build/Debug/generators/opengl_system-Target-debug.cmake conan/build/Debug/generators/opengl_system-config-version.cmake conan/build/Debug/generators/opengl_system-config.cmake conan/build/Debug/generators/opengl_system-debug-x86_64-data.cmake conan/build/Debug/generators/opengl_systemTargets.cmake: phony
 
 
 #############################################

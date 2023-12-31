@@ -26,6 +26,7 @@ set(SOURCE_FILES
 add_subdirectory(includes/imgui_bindings)
 add_subdirectory(includes/ToroImGuiHandle)
 add_subdirectory(includes/ToroImNodeFlow)
+add_subdirectory(includes/nativefiledialog-extended)
 
 # MAIN EXECUTABLE
 add_executable(FlexPlot main.cpp ${SOURCE_FILES} ${HEADER_ONLY_LIBS} ${IMPLOT_DEMO_SRC})
@@ -34,6 +35,7 @@ add_executable(FlexPlot main.cpp ${SOURCE_FILES} ${HEADER_ONLY_LIBS} ${IMPLOT_DE
 target_link_libraries(FlexPlot imgui_bindings)
 target_link_libraries(FlexPlot ToroImGuiHandle)
 target_link_libraries(FlexPlot ToroImNodeFlow)
+target_link_libraries(FlexPlot nfd)
 
 # FIND CONAN PACKAGES
 find_package(imgui)

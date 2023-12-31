@@ -217,6 +217,9 @@ namespace ImToro
 			{
 				for (int i = 0; i < items.size(); i++)
 				{
+                    if(items[i].empty())
+                        continue;
+
 					if (ImGui::Selectable(items[i].c_str()))
 					{
 						*current_item = i;
