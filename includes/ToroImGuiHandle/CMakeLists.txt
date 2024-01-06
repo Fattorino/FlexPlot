@@ -4,15 +4,12 @@ cmake_minimum_required(VERSION 3.26)
 project(ToroImGuiHandle C CXX)
 
 # SET SOURCE FILES FOR PROJECT
-set(SOURCE_FILES
-        ToroImGuiHandle.cpp
-        ToroImGuiHandle.h)
+file(GLOB_RECURSE _HDRS "include/*.hpp" "include/*.h")
+file(GLOB_RECURSE _SRCS "src/*.cpp")
+file(GLOB_RECURSE _IMGUI_BINDINGS "imgui_bindings/*.cpp" "imgui_bindings/*.h")
 
 # CREATE LIBRARY FROM SOURCE_FILES
-add_library(ToroImGuiHandle SHARED STATIC ${SOURCE_FILES})
-
-# LINK LOCAL LIBS
-target_link_libraries(ToroImGuiHandle imgui_bindings)
+add_library(ToroImGuiHandle SHARED STATIC ${_SRCS} ${_HDRS} ${_IMGUI_BINDINGS})
 
 # FIND CONAN PACKAGES
 find_package(imgui)
@@ -24,3 +21,6 @@ target_link_libraries(ToroImGuiHandle
         imgui::imgui
         opengl::opengl
         glfw)
+
+# PREP TO USE "#include <>"
+target_include_directories(ToroImGuiHandle PUBLIC include)

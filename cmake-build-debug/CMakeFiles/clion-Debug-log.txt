@@ -99,12 +99,8 @@ Install finished successfully
 -- Conan: Target declared 'glfw'
 -- CMake-Conan: find_package(imgui) found, 'conan install' already ran
 -- Conan: Target declared 'imgui::imgui'
--- CMake-Conan: find_package(opengl_system) found, 'conan install' already ran
--- Conan: Target declared 'opengl::opengl'
--- CMake-Conan: find_package(glfw3) found, 'conan install' already ran
--- Conan: Target declared 'glfw'
--- CMake-Conan: find_package(imgui) found, 'conan install' already ran
--- Conan: Target declared 'imgui::imgui'
+nfd Platform: PLATFORM_WIN32
+nfd Compiler: COMPILER_GNU
 -- CMake-Conan: find_package(imgui) found, 'conan install' already ran
 -- Conan: Target declared 'imgui::imgui'
 -- CMake-Conan: find_package(opengl_system) found, 'conan install' already ran
@@ -113,6 +109,6 @@ Install finished successfully
 -- Conan: Target declared 'implot::implot'
 -- CMake-Conan: find_package(glfw3) found, 'conan install' already ran
 -- Conan: Target declared 'glfw'
--- Configuring done (3.0s)
--- Generating done (0.1s)
+-- Configuring done (1.4s)
+-- Generating done (0.0s)
 -- Build files have been written to: C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug

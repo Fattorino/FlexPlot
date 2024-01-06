@@ -309,13 +309,13 @@ glfw3_DIR:PATH=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/De
 imgui_DIR:PATH=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/Debug/generators
 
 //Value Computed by CMake
-imgui_bindings_BINARY_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/imgui_bindings
+imgui_bindings_BINARY_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/includes/ToroImGuiHandle/imgui_bindings
 
 //Value Computed by CMake
 imgui_bindings_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-imgui_bindings_SOURCE_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/imgui_bindings
+imgui_bindings_SOURCE_DIR:STATIC=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/includes/ToroImGuiHandle/imgui_bindings
 
 //The directory containing a CMake configuration file for implot.
 implot_DIR:PATH=C:/AA-FILE/PROGRAMS/CPP/FlexPlot/cmake-build-debug/conan/build/Debug/generators
@@ -435,7 +435,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

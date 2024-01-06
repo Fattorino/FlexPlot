@@ -11,28 +11,20 @@ add_compile_definitions(IMGUI_DEFINE_MATH_OPERATORS)
 set(IMPLOT_DEMO_SRC includes/implot_demo/implot_demo.cpp)
 
 # HEADER ONLY LIBS
-set(HEADER_ONLY_LIBS
-        includes/header_only/csvparser.h
-        includes/header_only/imfilebrowser.h)
+file(GLOB_RECURSE _HDRS_ONLY "includes/header_only/*.hpp" "includes/header_only/*.h")
 
 # MAIN SOURCE FILES
-set(SOURCE_FILES
-        FlexPlot.cpp
-        FlexPlot.h
-        nodes.cpp
-        nodes.h)
+file(GLOB_RECURSE _SRCS "src/*.cpp" "src/*.h")
 
 # ADD SUB-DIRECTORIES FOR BUILDING
-add_subdirectory(includes/imgui_bindings)
 add_subdirectory(includes/ToroImGuiHandle)
 add_subdirectory(includes/ToroImNodeFlow)
 add_subdirectory(includes/nativefiledialog-extended)
 
 # MAIN EXECUTABLE
-add_executable(FlexPlot main.cpp ${SOURCE_FILES} ${HEADER_ONLY_LIBS} ${IMPLOT_DEMO_SRC})
+add_executable(FlexPlot src/main.cpp ${_SRCS} ${_HDRS_ONLY} ${IMPLOT_DEMO_SRC})
 
 # LINK LOCAL LIBS
-target_link_libraries(FlexPlot imgui_bindings)
 target_link_libraries(FlexPlot ToroImGuiHandle)
 target_link_libraries(FlexPlot ToroImNodeFlow)
 target_link_libraries(FlexPlot nfd)
@@ -49,3 +41,6 @@ target_link_libraries(FlexPlot
         opengl::opengl
         implot::implot
         glfw)
+
+# ADD HEADERS ONLY LIBS TO "#include <>"
+target_include_directories(FlexPlot PUBLIC includes/header_only)

@@ -4,27 +4,18 @@ cmake_minimum_required(VERSION 3.26)
 project(ToroImNodeFlow C CXX)
 
 # SET SOURCE FILES FOR PROJECT
-set(SOURCE_FILES
-        ToroImNodeFlow.cpp
-        ToroImNodeFlow.h ImNodeEditor/crude_json.cpp
-        ImNodeEditor/crude_json.h
-        ImNodeEditor/imgui_bezier_math.h
-        ImNodeEditor/imgui_bezier_math.inl
-        ImNodeEditor/imgui_canvas.cpp
-        ImNodeEditor/imgui_canvas.h
-        ImNodeEditor/imgui_extra_math.h
-        ImNodeEditor/imgui_extra_math.inl
-        ImNodeEditor/imgui_node_editor.cpp
-        ImNodeEditor/imgui_node_editor.h
-        ImNodeEditor/imgui_node_editor_api.cpp
-        ImNodeEditor/imgui_node_editor_internal.h
-        ImNodeEditor/imgui_node_editor_internal.inl)
+file(GLOB_RECURSE _HDRS "include/*.h")
+file(GLOB_RECURSE _SRCS "src/*.cpp")
+file(GLOB_RECURSE _IMNODEEDITOR "ImNodeEditor/*.cpp" "ImNodeEditor/*.h" "ImNodeEditor/*.inl")
 
 # CREATE LIBRARY FROM SOURCE_FILES
-add_library(ToroImNodeFlow SHARED STATIC ${SOURCE_FILES})
+add_library(ToroImNodeFlow SHARED STATIC ${_SRCS} ${_HDRS} ${_IMNODEEDITOR})
 
 # FIND CONAN PACKAGES
 find_package(imgui)
 
 # LINK CONAN LIBS
 target_link_libraries(ToroImNodeFlow imgui::imgui)
+
+# PREP TO USE "#include <>"
+target_include_directories(ToroImNodeFlow PUBLIC include)
