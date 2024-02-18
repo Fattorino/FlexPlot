@@ -26,15 +26,15 @@ void FlexPlot::m_nodesBar()
 			m_dragging = 0;
 			break;
 		case 2:
-            ImNodeFlow::pushNode<SubtractNode>(ImGui::GetMousePos(), true);
+            //ImNodeFlow::pushNode<SubtractNode>(ImGui::GetMousePos(), true);
 			m_dragging = 0;
 			break;
 		case 3:
-            ImNodeFlow::pushNode<MultiplyNode>(ImGui::GetMousePos(), true);
+            //ImNodeFlow::pushNode<MultiplyNode>(ImGui::GetMousePos(), true);
 			m_dragging = 0;
 			break;
 		case 4:
-            ImNodeFlow::pushNode<DivideNode>(ImGui::GetMousePos(), true);
+            //ImNodeFlow::pushNode<DivideNode>(ImGui::GetMousePos(), true);
 			m_dragging = 0;
 			break;
 		default:

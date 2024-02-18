@@ -50,63 +50,6 @@ private:
 
 // ---------------------------------------------------------------------------------------------------------------------
 
-class MultiplyNode : public BaseNode
-{
-public:
-	MultiplyNode() : BaseNode(ImNodeType_Middle) {}
-
-	void render() override;
-
-    std::vector<float> getOut(int index) override;
-
-private:
-	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
-	BasePin inB = BasePin(this, ImNode::PinKind::Input, false, "IN B");
-	BasePin out = BasePin(this, ImNode::PinKind::Output, true, "OUT");
-
-    std::vector<float> m_data;
-};
-
-// ---------------------------------------------------------------------------------------------------------------------
-
-class SubtractNode : public BaseNode
-{
-public:
-	SubtractNode() : BaseNode(ImNodeType_Middle) {}
-
-	void render() override;
-
-    std::vector<float> getOut(int index) override;
-
-private:
-	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
-	BasePin inB = BasePin(this, ImNode::PinKind::Input, false, "IN B");
-	BasePin out = BasePin(this, ImNode::PinKind::Output, true, "OUT");
-
-    std::vector<float> m_data;
-};
-
-// ---------------------------------------------------------------------------------------------------------------------
-
-class DivideNode : public BaseNode
-{
-public:
-	DivideNode() : BaseNode(ImNodeType_Middle) {}
-
-	void render() override;
-
-    std::vector<float> getOut(int index) override;
-
-private:
-	BasePin inA = BasePin(this, ImNode::PinKind::Input, false, "IN A");
-	BasePin inB = BasePin(this, ImNode::PinKind::Input, false, "IN B");
-	BasePin out = BasePin(this, ImNode::PinKind::Output, true, "OUT");
-
-    std::vector<float> m_data;
-};
-
-// ---------------------------------------------------------------------------------------------------------------------
-
 class ReadNode : public BaseNode
 {
 public:

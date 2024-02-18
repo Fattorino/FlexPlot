@@ -4,7 +4,7 @@
 #include <vector>
 #include <implot.h>
 
-#include "ToroImGuiHandle.hpp"
+#include <ToroImGuiHandle.hpp>
 #include "nodes.h"
 
 #define SUM_VEC(a, b) ImVec2(a.x + b.x, a.y + b.y)
@@ -22,11 +22,11 @@ private:
 public:
 	void onCreate() override
 	{
-        ImNodeFlow::init(m_nodes);
+        ImNodeFlow::init(&m_nodes);
 
         ImNodeFlow::pushNode<CsvColumnReader>();
         ImNodeFlow::pushNode<SumNode>();
-        ImNodeFlow::pushNode<MultiplyNode>();
+        //ImNodeFlow::pushNode<MultiplyNode>();
         ImNodeFlow::pushNode<ReadNode>();
 	}
 

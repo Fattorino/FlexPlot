@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.26)
 project(FlexPlot)
 
 # SET CMAKE STANDARD
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # PREPROCESSOR VARS
 add_compile_definitions(IMGUI_DEFINE_MATH_OPERATORS)
@@ -16,17 +16,32 @@ file(GLOB_RECURSE _HDRS_ONLY "includes/header_only/*.hpp" "includes/header_only/
 # MAIN SOURCE FILES
 file(GLOB_RECURSE _SRCS "src/*.cpp" "src/*.h")
 
-# ADD SUB-DIRECTORIES FOR BUILDING
-add_subdirectory(includes/ToroImGuiHandle)
-add_subdirectory(includes/ToroImNodeFlow)
+# ADD DEPENDENCIES SUB-DIRECTORIES
 add_subdirectory(includes/nativefiledialog-extended)
+
+# OTHER DEPENDENCIES
+include(FetchContent)
+FetchContent_Declare(ImNodeFlow
+        GIT_REPOSITORY "https://github.com/Fattorino/ImNodeFlow.git"
+        GIT_TAG "origin/master"
+        SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/includes/ImNodeFlow"
+)
+FetchContent_MakeAvailable(ImNodeFlow)
+
+include(FetchContent)
+FetchContent_Declare(ImGuiHandler
+        GIT_REPOSITORY "https://github.com/Fattorino/ImGuiHandler.git"
+        GIT_TAG "origin/master"
+        SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/includes/ImGuiHandler"
+)
+FetchContent_MakeAvailable(ImGuiHandler)
 
 # MAIN EXECUTABLE
 add_executable(FlexPlot src/main.cpp ${_SRCS} ${_HDRS_ONLY} ${IMPLOT_DEMO_SRC})
 
 # LINK LOCAL LIBS
-target_link_libraries(FlexPlot ToroImGuiHandle)
-target_link_libraries(FlexPlot ToroImNodeFlow)
+target_link_libraries(FlexPlot ImGuiHandler)
+target_link_libraries(FlexPlot ImNodeFlow)
 target_link_libraries(FlexPlot nfd)
 
 # FIND CONAN PACKAGES
