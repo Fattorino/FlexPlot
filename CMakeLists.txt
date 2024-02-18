@@ -16,10 +16,7 @@ file(GLOB_RECURSE _HDRS_ONLY "includes/header_only/*.hpp" "includes/header_only/
 # MAIN SOURCE FILES
 file(GLOB_RECURSE _SRCS "src/*.cpp" "src/*.h")
 
-# ADD DEPENDENCIES SUB-DIRECTORIES
-add_subdirectory(includes/nativefiledialog-extended)
-
-# OTHER DEPENDENCIES
+# DEPENDENCIES
 include(FetchContent)
 FetchContent_Declare(ImNodeFlow
         GIT_REPOSITORY "https://github.com/Fattorino/ImNodeFlow.git"
@@ -35,6 +32,14 @@ FetchContent_Declare(ImGuiHandler
         SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/includes/ImGuiHandler"
 )
 FetchContent_MakeAvailable(ImGuiHandler)
+
+include(FetchContent)
+FetchContent_Declare(nfd
+        GIT_REPOSITORY "https://github.com/btzy/nativefiledialog-extended.git"
+        GIT_TAG "origin/master"   # it's much better to use a specific Git revision or Git tag for reproducibility
+        SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/includes/nfd"
+)
+FetchContent_MakeAvailable(nfd)
 
 # MAIN EXECUTABLE
 add_executable(FlexPlot src/main.cpp ${_SRCS} ${_HDRS_ONLY} ${IMPLOT_DEMO_SRC})
