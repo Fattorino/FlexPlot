@@ -1,7 +1,6 @@
-#include <imgui.h>
+#include <ImGuiHandler.h>
 #include <implot.h>
 
-#include "ToroImGuiHandle.hpp"
 #include "FlexPlot.h"
 
 void menuBar()

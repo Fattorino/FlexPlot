@@ -4,44 +4,26 @@
 #include <vector>
 #include <implot.h>
 
-#include <ToroImGuiHandle.hpp>
+#include <ImGuiHandler.h>
+#include <ImNodeFlow.h>
 #include "nodes.h"
 
-#define SUM_VEC(a, b) ImVec2(a.x + b.x, a.y + b.y)
+using namespace ImFlow;
 
 class FlexPlot : public appLayer
 {
+public:
+    void onCreate() override
+    {
+        inf.addNode<CsvReader>({0, 0});
+    }
+
+    void update() override;
+
 private:
+    ImNodeFlow inf;
 	float m_split = 200.f;
 	int m_dragging = 0;
 
-    std::vector<std::shared_ptr<BaseNode>> m_nodes;
-
 	void m_nodesBar();
-
-public:
-	void onCreate() override
-	{
-        ImNodeFlow::init(&m_nodes);
-
-        ImNodeFlow::pushNode<CsvColumnReader>();
-        ImNodeFlow::pushNode<SumNode>();
-        //ImNodeFlow::pushNode<MultiplyNode>();
-        ImNodeFlow::pushNode<ReadNode>();
-	}
-
-    ~FlexPlot() { ImNodeFlow::destroy(); }
-    
-	void update() override;
-
-	void menuBar() override
-	{
-		if (ImGui::BeginMenu("File"))
-		{
-			if (ImGui::MenuItem("Dummy"))
-			{
-			}
-			ImGui::EndMenu();
-		}
-	}
 };

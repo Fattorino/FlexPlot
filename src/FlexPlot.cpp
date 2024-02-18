@@ -22,7 +22,7 @@ void FlexPlot::m_nodesBar()
 		switch (m_dragging)
 		{
 		case 1:
-            ImNodeFlow::pushNode<SumNode>(ImGui::GetMousePos(), true);
+            //ImNodeFlow::pushNode<SumNode>(ImGui::GetMousePos(), true);
 			m_dragging = 0;
 			break;
 		case 2:
@@ -62,9 +62,7 @@ void FlexPlot::update()
 	ImGui::SameLine();
 	ImGui::PopStyleVar();
 
-	ImGui::BeginChild("FlowGrid", ImVec2(0, 0));
-    ImNodeFlow::update();
-	ImGui::EndChild();
+    inf.update();
 
 	if (m_dragging > 0)
 	{
